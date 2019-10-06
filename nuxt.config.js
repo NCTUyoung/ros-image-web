@@ -1,10 +1,15 @@
 const colors = require('vuetify/es5/util/colors').default
-
+const routerBase = process.env.NODE_ENV!== 'development' ? {
+  router: {
+    base: '/ros-image-web/'
+  }
+} : {}
 module.exports = {
+  ...routerBase,
   generate:{
     dir:'docs'
   },
-  mode: 'spa',
+  mode: 'universal',
   /*
   ** Headers of the page
   */
